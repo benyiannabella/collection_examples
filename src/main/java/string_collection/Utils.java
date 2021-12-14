@@ -5,9 +5,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Utils {
-
+    ArrayList<String> songList = new ArrayList<>();
     public ArrayList<String> readFile(){
-        ArrayList<String> songList = new ArrayList<>();
         File songs = new File("./target/classes/songs.txt");
         String line;
         try {

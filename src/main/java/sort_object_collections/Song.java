@@ -64,12 +64,12 @@ public class Song implements Comparable<Song>{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Song song = (Song) o;
-        return Objects.equals(songTitle, song.songTitle);
+        return songTitle.equals(((Song) o).songTitle);
     }
 
     @Override
     public int hashCode() {
-        return songTitle != null ? songTitle.hashCode() : 0;
+        return songTitle.hashCode();
     }
 
     @Override

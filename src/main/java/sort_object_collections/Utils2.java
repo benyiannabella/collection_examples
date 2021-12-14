@@ -2,7 +2,9 @@ package sort_object_collections;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 
 public class Utils2 {
 
@@ -25,6 +27,10 @@ public class Utils2 {
         System.out.println("__________________Sort By Title with Comparable_____________");
         Collections.sort(songs);
         printSongs(songs);
+        System.out.println("______________Using Set__________________");
+        HashSet<Song> songSet = new HashSet<>();
+        songSet.addAll(songs);
+        printSongs(songSet);
     }
 
     public void createList(String songFile, ArrayList<Song> songs){
@@ -33,7 +39,7 @@ public class Utils2 {
         songs.add(song);
     }
 
-    public void printSongs(ArrayList<Song> songs){
+    public void printSongs(Collection<Song> songs){
         songs.forEach(System.out :: println);
     }
 
