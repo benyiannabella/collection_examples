@@ -1,14 +1,12 @@
 package sort_object_collections;
 
 import java.io.*;
-import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class Utils2 {
 
-    public ArrayList<Song> readFile(){
+    public void readFile(){
         ArrayList<Song> songs = new ArrayList<>();
         File file = new File("./target/classes/songs.txt");
         String song;
@@ -20,9 +18,13 @@ public class Utils2 {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        ArtistComparator comparator = new ArtistComparator();
+        System.out.println("_______Sort by Artist using Comparator_________________");
+        Collections.sort(songs, comparator);
+        printSongs(songs);
+        System.out.println("__________________Sort By Title with Comparable_____________");
         Collections.sort(songs);
         printSongs(songs);
-        return songs;
     }
 
     public void createList(String songFile, ArrayList<Song> songs){
