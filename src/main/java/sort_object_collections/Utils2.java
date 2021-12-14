@@ -1,10 +1,7 @@
 package sort_object_collections;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.*;
 
 public class Utils2 {
 
@@ -27,10 +24,14 @@ public class Utils2 {
         System.out.println("__________________Sort By Title with Comparable_____________");
         Collections.sort(songs);
         printSongs(songs);
-        System.out.println("______________Using Set__________________");
+        System.out.println("______________Using HashSet__________________");
         HashSet<Song> songSet = new HashSet<>();
         songSet.addAll(songs);
         printSongs(songSet);
+        System.out.println("______________Using TreeSet__________________");
+        TreeSet<Song> songTreeSet = new TreeSet<>();
+        songTreeSet.addAll(songs);
+        printSongs(songTreeSet);
     }
 
     public void createList(String songFile, ArrayList<Song> songs){
